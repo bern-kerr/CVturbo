@@ -7,14 +7,15 @@ from dotenv import find_dotenv, load_dotenv
 
 # Configuração de variáveis do ambiente
 #st.session_state['api_key_openai'] = os.environ['OPENAI_API_KEY']
+#api_key = os.environ['OPENAI_API_KEY']
 
 _ = load_dotenv(find_dotenv())
 st.session_state['GEMINI_MODEL_NAME'] = 'gemini-1.5-pro'
-st.session_state['api_key'] = os.getenv['GOOGLE_API_KEY']
+st.session_state['api_key'] = os.environ['GOOGLE_API_KEY']
 
 if not st.session_state['api_key']:
-    st.warning("A GOOGLE_API_KEY não está configurada!")
-
+    st.warning("A chave de API (GOOGLE_API_KEY) não está configurada!")
+    
 def carrega_arquivos(arquivo):
     """Carrega o conteúdo do PDF usando loaders.py"""
     with tempfile.NamedTemporaryFile(suffix='.pdf', delete=False) as temp:

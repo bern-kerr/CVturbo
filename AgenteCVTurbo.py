@@ -1,3 +1,7 @@
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
 import tempfile
 import os
 import streamlit as st
@@ -8,10 +12,6 @@ from dotenv import find_dotenv, load_dotenv
 # Configuração de variáveis do ambiente
 #st.session_state['api_key_openai'] = os.environ['OPENAI_API_KEY']
 #api_key = os.environ['OPENAI_API_KEY']
-
-__import__('pysqlite3')
-import sys
-sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 _ = load_dotenv(find_dotenv())
 st.session_state['GEMINI_MODEL_NAME'] = 'gemini-1.5-pro'

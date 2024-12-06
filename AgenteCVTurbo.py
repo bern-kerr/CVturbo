@@ -7,7 +7,6 @@ from dotenv import find_dotenv, load_dotenv
 
 # Configuração de variáveis do ambiente
 #st.session_state['api_key_openai'] = os.environ['OPENAI_API_KEY']
-#api_key = os.environ['OPENAI_API_KEY']
 
 _ = load_dotenv(find_dotenv())
 st.session_state['GEMINI_MODEL_NAME'] = 'gemini-1.5-pro'

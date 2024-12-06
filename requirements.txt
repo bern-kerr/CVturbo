@@ -1,0 +1,5 @@
+setuptools==75.6.0
+crewai==0.83.0
+crewai-tools==0.14.0
+google-generativeai==0.8.3
+streamlit==1.38.0

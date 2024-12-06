@@ -7,6 +7,7 @@ def cria_agente_e_tarefa(curriculo, linkedin, vaga):
         role="Pesquisador de Vagas de Emprego",
         goal="Certifique-se de realizar análises incríveis em anúncios de vagas para ajudar candidatos a emprego",
         verbose=True,
+        llm='gemini/gemini-1.5-pro',
         backstory=(
         "Como Pesquisador de Vagas, sua habilidade em "
         "navegar e extrair informações críticas "
@@ -22,6 +23,7 @@ def cria_agente_e_tarefa(curriculo, linkedin, vaga):
     goal="Realizar pesquisas sobre candidatos a emprego "
     "com o objetivo de ajudá-los a se destacar no mercado de trabalho",
     verbose=True,
+    llm='gemini/gemini-1.5-pro',
     backstory=(
     "Equipado com habilidades analíticas, você disseca "
     "e sintetiza informações de diversas fontes para criar "
@@ -35,6 +37,7 @@ def cria_agente_e_tarefa(curriculo, linkedin, vaga):
     goal="Encontrar as melhores maneiras de fazer um "
     "currículo se destacar para a vaga de interesse do profissional.",
     verbose=True,
+    llm='gpt-4o-mini',
     backstory=(
     "Com uma mente estratégica e atenção aos detalhes, você "
     "se destaca ao refinar currículos para destacar as habilidades "
@@ -63,6 +66,7 @@ def cria_agente_e_tarefa(curriculo, linkedin, vaga):
             f"\n\n"
             f"Descrição da Vaga: \n\n{vaga}\n\n"            
         ),
+        llm='gemini/gemini-1.5-pro',
         expected_output=(
             "Uma lista estruturada de requisitos da vaga, incluindo as habilidades, qualificações e experiências necessárias."
         ),
@@ -77,6 +81,7 @@ def cria_agente_e_tarefa(curriculo, linkedin, vaga):
             f"Perfil do LinkedIn: \n\n{linkedin}\n\n"        
             "Extrair e sintetizar as informações mais relevantes dessas fontes."
         ),
+        llm='gemini/gemini-1.5-pro',
         expected_output=(
             "Um documento de perfil abrangente que inclua habilidades, "
             "experiências em projetos, contribuições, interesses e "
@@ -98,8 +103,9 @@ def cria_agente_e_tarefa(curriculo, linkedin, vaga):
         "habilidades e educação, tudo para refletir melhor as habilidades "
         "do candidato e como elas se alinham ao anúncio da vaga."
     ),
+    llm='gpt-4o-mini',
     expected_output=(
-        "Uma lista visual e clara, em tópicos, usando markdown, de melhorias de currículo sugeridas que destacam de forma eficaz as qualificações "
+        "Uma lista em português, visual e clara, em tópicos, usando markdown, de melhorias de currículo sugeridas que destacam de forma eficaz as qualificações "
         "e experiências do candidato mais relevantes para a vaga em questão."
     ),
     context=[research_task, profile_task],  # declara tasks como contexto
@@ -131,7 +137,7 @@ def executar_crew(agentes, tarefas):
     """Executa o Crew com os agentes e as tarefas configurados"""
     crew = Crew(
         agents=agentes,
-        tasks=tarefas,
+        tasks=tarefas
         
     )
     resultado = crew.kickoff()

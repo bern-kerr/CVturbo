@@ -15,7 +15,7 @@ from dotenv import find_dotenv, load_dotenv
 
 _ = load_dotenv(find_dotenv())
 st.session_state['GEMINI_MODEL_NAME'] = 'gemini-1.5-pro'
-st.session_state['api_key'] = os.environ['GOOGLE_API_KEY']
+st.session_state['api_key'] = os.environ['GEMINI_API_KEY']
 
 if not st.session_state['api_key']:
     st.warning("A chave de API (GOOGLE_API_KEY) não está configurada!")

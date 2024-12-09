@@ -5,13 +5,13 @@ def cria_agente_e_tarefa(curriculo, linkedin, vaga):
     # Definir os agentes
     researcher = Agent(
         role="Pesquisador de Vagas de Emprego",
-        goal="Certifique-se de realizar análises incríveis em anúncios de vagas para ajudar candidatos a emprego",
+        goal="Certifique-se de realizar análises criteriosas em anúncios de vagas para ajudar candidatos a emprego",
         verbose=True,
         llm='gemini/gemini-1.5-pro',
         backstory=(
         "Como Pesquisador de Vagas, sua habilidade em "
-        "navegar e extrair informações críticas "
-        "de anúncios de emprego é incomparável. "
+        "extrair informações críticas "
+        "de uma vaga de emprego de emprego é incomparável. "
         "Suas competências ajudam a identificar as qualificações "
         "e habilidades necessárias procuradas pelos empregadores, "
         "formando a base para a personalização eficaz de candidaturas."
@@ -21,14 +21,14 @@ def cria_agente_e_tarefa(curriculo, linkedin, vaga):
     profiler = Agent(
     role="Especialista em criação de perfil profissional",
     goal="Realizar pesquisas sobre candidatos a emprego "
-    "com o objetivo de ajudá-los a se destacar no mercado de trabalho",
+    "com o objetivo de ajudá-los a se destacar na seleção pra vaga de emprego",
     verbose=True,
     llm='gemini/gemini-1.5-pro',
     backstory=(
-    "Equipado com habilidades analíticas, você disseca "
-    "e sintetiza informações de diversas fontes para criar "
-    "perfis pessoais e profissionais abrangentes, estabelecendo "
-    "a base para aprimoramentos personalizados de currículos."
+    "Equipado com habilidades analíticas, você "
+    "sintetiza informações do CV e perfil do linkedin para criar "
+    "um perfil profissional abrangente, estabelecendo "
+    "a base para aprimoramentos personalizados de currículo."
         )
     )
 
@@ -42,7 +42,8 @@ def cria_agente_e_tarefa(curriculo, linkedin, vaga):
     "Com uma mente estratégica e atenção aos detalhes, você "
     "se destaca ao refinar currículos para destacar as habilidades "
     "e experiências mais relevantes, garantindo que eles "
-    "atendam perfeitamente os requisitos da vaga."
+    "atendam os requisitos da vaga. Use as informações disponíveis e faça sugestões práticas"
+    "com base no que o usuário já tem no seu currículo e perfil profissional."
         )
     )
 
@@ -83,9 +84,9 @@ def cria_agente_e_tarefa(curriculo, linkedin, vaga):
         ),
         llm='gemini/gemini-1.5-pro',
         expected_output=(
-            "Um documento de perfil abrangente que inclua habilidades, "
-            "experiências em projetos, contribuições, interesses e "
-            "estilo de comunicação."
+            "Um documento de perfil abrangente que inclua as habilidades do profissional, "
+            "experiências e impacto das funções e projetos que participou, interesses de carreira e "
+            "estilo de comunicação, de acordo com os dados fornecidos."
         ),
         agent=profiler,
         async_execution=False  # síncrono
@@ -97,16 +98,18 @@ def cria_agente_e_tarefa(curriculo, linkedin, vaga):
         "tarefas anteriores, personalize o currículo para destacar as áreas "
         "mais relevantes. Utilize ferramentas para ajustar e aprimorar "
         "o conteúdo do currículo. Certifique-se de que este seja o melhor "
-        "currículo possível, mas sem inventar nenhuma informação."
-        "Deixe claras as sugestões de melhoria do currículo, "
-        "apontando sugestões para todas as seções, incluindo o resumo inicial, experiência profissional, "
+        "currículo possível, respeitando as fontes de informação fornecidas."
+        "Deixe claras as sugestões de melhoria do currículo e o porquê dessa sugestão ter sido dada, "
+        "apontando melhorias para todas as seções, incluindo o resumo inicial, experiência profissional, "
         "habilidades e educação, tudo para refletir melhor as habilidades "
         "do candidato e como elas se alinham ao anúncio da vaga."
     ),
     llm='gpt-4o-mini',
     expected_output=(
-        "Uma lista em português, visual e clara, em tópicos, usando markdown, de melhorias de currículo sugeridas que destacam de forma eficaz as qualificações "
-        "e experiências do candidato mais relevantes para a vaga em questão."
+        "Uma lista em português, visual e clara, em tópicos, usando markdown, "
+        "de melhorias de currículo sugeridas, com o objetivo de destacar de forma eficaz as qualificações "
+        "e experiências do candidato mais relevantes para a vaga em questão. Para cada melhoria, explique sucintamente o racional"
+        "e como essa melhoria está alinhada com a vaga desejada pelo profissional."
     ),
     context=[research_task, profile_task],  # declara tasks como contexto
     agent=resume_strategist,  # assíncrono, pois espera tasks 1 e 2

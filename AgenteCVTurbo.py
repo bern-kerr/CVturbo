@@ -35,7 +35,7 @@ def sidebar():
     #st.markdown("\nQuanto mais informações fornecidas, mais turbinado fica!")
     curriculo = st.file_uploader('Faça o upload do currículo em PDF', type=['pdf'])
     linkedin = st.file_uploader('Faça o upload do perfil do LinkedIn em PDF', type=['pdf'])
-    descricao_vaga = st.text_area('Insira a descrição da vaga desejada:', height=300)
+    descricao_vaga = st.text_area('Insira a descrição da vaga desejada e aperte ctrl+enter:', height=300)
     
     st.session_state['uploaded_curriculo'] = curriculo
     st.session_state['uploaded_linkedin'] = linkedin

@@ -1,1 +1,0 @@
-pywin32==308 - removido e tentado sem a versãotenacity==8.5.0 - mudei para 8.3.0instructor==1.7.0 - removidoopenai==1.55.2 - removidojiter==0.6.1 - removidosqlite3 - incluídozipp==3.21.0

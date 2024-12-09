@@ -50,7 +50,7 @@ def pagina_principal():
     vaga = st.session_state.get('descricao_vaga', "").strip()
     
     if curriculo and linkedin and vaga:
-        if st.button(f'Turbinar currículo! O processo leva até 1 minuto', type="primary"):
+        if st.button(f'Turbinar currículo! Clique 1x e aguarde 1 minuto', type="primary"):
             curriculo_texto = carrega_arquivos(curriculo)
             linkedin_texto = carrega_arquivos(linkedin)
             #researcher, profiler, resume_strategist, interview_preparer, research_task, profile_task, resume_strategy_task, interview_preparation_task = cria_agente_e_tarefa(curriculo_texto, linkedin_texto, vaga)

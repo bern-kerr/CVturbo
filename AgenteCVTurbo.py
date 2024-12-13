@@ -32,19 +32,22 @@ def sidebar():
     """Configura a barra lateral para upload de arquivos e descrição da vaga"""
     st.title("📝 Currículo Turbinado")
     st.subheader("Preencha aqui suas informações profissionais e da vaga")
-    #st.markdown("\nQuanto mais informações fornecidas, mais turbinado fica!")
-    curriculo = st.file_uploader('Faça o upload do currículo em PDF', type=['pdf'])
-    linkedin = st.file_uploader('Faça o upload do perfil do LinkedIn em PDF', type=['pdf'])
-    st.markdown("[Instruções para baixar pdf do LinkedIn](https://www.youtube.com/watch?v=elBUCn_TRzY)")
-    descricao_vaga = st.text_area('Insira a descrição da vaga desejada e aperte ctrl+enter:', height=300)
+        
+    st.markdown("\n\n")
+    st.markdown("Estamos revisando o app para fazer algumas melhorias. Se quiser falar com a gente, mande um email para bernardo@iafacil.tech. Obrigado!")
     
-    st.session_state['uploaded_curriculo'] = curriculo
-    st.session_state['uploaded_linkedin'] = linkedin
-    st.session_state['descricao_vaga'] = descricao_vaga
+    #curriculo = st.file_uploader('Faça o upload do currículo em PDF', type=['pdf'])
+    #linkedin = st.file_uploader('Faça o upload do perfil do LinkedIn em PDF', type=['pdf'])
+    #st.markdown("[Instruções para baixar pdf do LinkedIn](https://www.youtube.com/watch?v=elBUCn_TRzY)")
+    #descricao_vaga = st.text_area('Insira a descrição da vaga desejada e aperte ctrl+enter:', height=300)
+    
+    #st.session_state['uploaded_curriculo'] = curriculo
+    #st.session_state['uploaded_linkedin'] = linkedin
+    #st.session_state['descricao_vaga'] = descricao_vaga
 
 
 def pagina_principal():
-            
+
     curriculo = st.session_state.get('uploaded_curriculo', None)
     linkedin = st.session_state.get('uploaded_linkedin', None)
     vaga = st.session_state.get('descricao_vaga', "").strip()

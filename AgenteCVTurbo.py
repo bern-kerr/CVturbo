@@ -93,7 +93,8 @@ def pagina_principal():
             exibir_resultados(resultado)              
             
     else:
-        st.info("A interface é melhor no PC / tablet. Se for usar no celular, clique na seta > para abrir o menu lateral", icon=":material/computer:")
+        st.info("A interface é melhor no PC / tablet", icon=":material/computer:")
+        st.info("Se for usar no celular, clique na seta > para abrir o menu lateral. Depois de fazer o upload e incluir o texto da vaga, feche o menu lateral", icon=":material/smartphone:")
         st.info("Faça o upload dos arquivos pdf e cole a descrição da vaga para iniciar a análise.", icon=":material/download:")
         st.info("[No PC] não se esqueça de apertar ctrl+enter para salvar a descrição da vaga",icon=":material/keyboard:")
 

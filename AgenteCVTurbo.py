@@ -95,7 +95,7 @@ def pagina_principal():
     else:
         st.info("A interface é melhor no PC / tablet. Se for usar no celular, clique na seta > para abrir o menu lateral", icon=":material/computer:")
         st.info("Faça o upload dos arquivos pdf e cole a descrição da vaga para iniciar a análise.", icon=":material/download:")
-        st.info("[No PC} não se esqueça de apertar ctrl+enter para salvar a descrição da vaga",icon=":material/keyboard:")
+        st.info("[No PC] não se esqueça de apertar ctrl+enter para salvar a descrição da vaga",icon=":material/keyboard:")
 
 def exibir_resultados(resultado):
     """Função para formatar e exibir o resultado no Streamlit."""

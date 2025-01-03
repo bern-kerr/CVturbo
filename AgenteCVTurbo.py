@@ -30,7 +30,7 @@ def carrega_arquivos(arquivo):
 
 def sidebar():
     """Configura a barra lateral para upload de arquivos e descrição da vaga"""
-    st.title("📝 Currículo Turbinado - versão para PC / tablet")
+    st.title("📝 Currículo Turbinado")
     st.write("É necessário estar de acordo com os [termos de uso](https://docs.google.com/document/d/1OnjIfC-qA5z30is8OgmNp149IxMW2xs3QJglKZx9knY/edit?usp=sharing) para continuar")
     agree = st.radio("Você concorda com os termos de uso?", options=["Não", "Sim"])        
     
@@ -93,7 +93,7 @@ def pagina_principal():
             exibir_resultados(resultado)              
             
     else:
-        st.info("A interface é melhor no PC ou tablet. Se for usar no celular, clique na seta > para abrir o menu lateral", icon=":material/computer:")
+        st.info("A interface é melhor no PC / tablet. Se for usar no celular, clique na seta > para abrir o menu lateral", icon=":material/computer:")
         st.info("Faça o upload dos arquivos pdf e cole a descrição da vaga para iniciar a análise.", icon=":material/download:")
         st.info("Não se esqueça de apertar ctrl+enter para salvar a descrição da vaga, depois de colar o texto.",icon=":material/keyboard:")
 

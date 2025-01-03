@@ -42,7 +42,7 @@ def sidebar():
         curriculo = st.file_uploader('Faça o upload do currículo em PDF', type=['pdf'])
         linkedin = st.file_uploader('Faça o upload do perfil do LinkedIn em PDF', type=['pdf'])
         st.markdown("[Instruções para baixar pdf do LinkedIn](https://www.youtube.com/watch?v=elBUCn_TRzY)")
-        descricao_vaga = st.text_area('Insira a descrição da vaga desejada e aperte ctrl+enter:', height=300)
+        descricao_vaga = st.text_input('Insira a descrição da vaga desejada:', height=300)
         
         st.session_state['uploaded_curriculo'] = curriculo
         st.session_state['uploaded_linkedin'] = linkedin

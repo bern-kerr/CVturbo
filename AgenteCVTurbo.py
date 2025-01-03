@@ -30,7 +30,7 @@ def carrega_arquivos(arquivo):
 
 def sidebar():
     """Configura a barra lateral para upload de arquivos e descrição da vaga"""
-    st.title("📝 Currículo Turbinado")
+    st.title("📝 Currículo Turbinado - versão para PC / tablet")
     st.subheader("Preencha aqui suas informações profissionais e da vaga")
     st.write("É necessário estar de acordo com os [termos de uso](https://docs.google.com/document/d/1OnjIfC-qA5z30is8OgmNp149IxMW2xs3QJglKZx9knY/edit?usp=sharing) para continuar")
     agree = st.radio("Você concorda com os termos de uso?", options=["Não", "Sim"])        

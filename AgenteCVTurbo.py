@@ -32,18 +32,23 @@ def sidebar():
     """Configura a barra lateral para upload de arquivos e descrição da vaga"""
     st.title("📝 Currículo Turbinado")
     st.subheader("Preencha aqui suas informações profissionais e da vaga")
+    st.write("**É necessário estar de acordo com os [termos de uso](https://docs.google.com/document/d/1OnjIfC-qA5z30is8OgmNp149IxMW2xs3QJglKZx9knY/edit?usp=sharing) para continuar**")
+    agree = st.radio("Você concorda com os termos de uso?", options=["Não", "Sim"])        
+    
+    #st.markdown("\n\n")
+    #st.markdown("Estamos revisando o app para fazer algumas melhorias. Se quiser falar com a gente, mande um email para bernardo@iafacil.tech. Obrigado!")
+
+    if agree == "Sim":
+        curriculo = st.file_uploader('Faça o upload do currículo em PDF', type=['pdf'])
+        linkedin = st.file_uploader('Faça o upload do perfil do LinkedIn em PDF', type=['pdf'])
+        st.markdown("[Instruções para baixar pdf do LinkedIn](https://www.youtube.com/watch?v=elBUCn_TRzY)")
+        descricao_vaga = st.text_area('Insira a descrição da vaga desejada e aperte ctrl+enter:', height=300)
         
-    st.markdown("\n\n")
-    st.markdown("Estamos revisando o app para fazer algumas melhorias. Se quiser falar com a gente, mande um email para bernardo@iafacil.tech. Obrigado!")
-    
-    #curriculo = st.file_uploader('Faça o upload do currículo em PDF', type=['pdf'])
-    #linkedin = st.file_uploader('Faça o upload do perfil do LinkedIn em PDF', type=['pdf'])
-    #st.markdown("[Instruções para baixar pdf do LinkedIn](https://www.youtube.com/watch?v=elBUCn_TRzY)")
-    #descricao_vaga = st.text_area('Insira a descrição da vaga desejada e aperte ctrl+enter:', height=300)
-    
-    #st.session_state['uploaded_curriculo'] = curriculo
-    #st.session_state['uploaded_linkedin'] = linkedin
-    #st.session_state['descricao_vaga'] = descricao_vaga
+        st.session_state['uploaded_curriculo'] = curriculo
+        st.session_state['uploaded_linkedin'] = linkedin
+        st.session_state['descricao_vaga'] = descricao_vaga
+    else:
+        st.warning("Você precisa aceitar os termos de uso para acessar o app.")
 
 
 def pagina_principal():

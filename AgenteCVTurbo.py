@@ -48,11 +48,21 @@ def sidebar():
         st.session_state['uploaded_linkedin'] = linkedin
         st.session_state['descricao_vaga'] = descricao_vaga
         st.markdown("<h1 style='font-size: 12px'>Desenvolvido por Facilit.AI</h1>", unsafe_allow_html=True)
-        st.markdown("<h6 style='font-size: 12px'>Clique na logo para entrar em contato (LinkedIn):</h1>", unsafe_allow_html=True)
-        #st.image('https://media.licdn.com/dms/image/v2/D4D0BAQELTl5xA91RHg/company-logo_100_100/company-logo_100_100/0/1727325533304?e=1738195200&v=beta&t=KjuBnUerdDgR1tBShcdpP_PSXiKyT9ju3fUW4n5yGQM', width=50)
+        st.image('https://media.licdn.com/dms/image/v2/D4D0BAQELTl5xA91RHg/company-logo_100_100/company-logo_100_100/0/1727325533304?e=1738195200&v=beta&t=KjuBnUerdDgR1tBShcdpP_PSXiKyT9ju3fUW4n5yGQM', width=50)
+        st.markdown("<h6 style='font-size: 12px'>Nos siga nas redes!</h1>", unsafe_allow_html=True)
+        st.markdown("""
+        <a href="https://www.instagram.com/facilit.ai_/" target="_blank">
+            <img src="https://cdn.icon-icons.com/icons2/2845/PNG/512/instagram_logo_icon_181283.png" 
+                style="width: 50px; 
+                    height: auto; 
+                    cursor: pointer;
+                    border-radius: 10px;"
+                />
+            </a>
+        """, unsafe_allow_html=True)
         st.markdown("""
         <a href="https://www.linkedin.com/company/105124305/" target="_blank">
-            <img src="https://media.licdn.com/dms/image/v2/D4D0BAQELTl5xA91RHg/company-logo_100_100/company-logo_100_100/0/1727325533304?e=1738195200&v=beta&t=KjuBnUerdDgR1tBShcdpP_PSXiKyT9ju3fUW4n5yGQM" 
+            <img src="https://img.icons8.com/win10/512/linkedin.png" 
                 style="width: 50px; 
                     height: auto; 
                     cursor: pointer;
